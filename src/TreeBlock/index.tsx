@@ -185,7 +185,7 @@ const TreeBlock = ({
                                         : '',
                                 }}
                                 inputProps={{
-                                    readonly: modalInEditMode,
+                                    readOnly: modalInEditMode,
                                 }}
                                 defaultValue={modalInEditMode ? currentModalResourceKey : ''}
                                 disabled={modalInEditMode}
