@@ -1,0 +1,81 @@
+{
+  "version": "0.0.0-develop",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "peerDependencies": {
+    "react": ">=16",
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.57",
+    "styled-components": "^5.2.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "tabWidth": 4,
+    "printWidth": 120,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "@build-security/react-rbac-ui-manager",
+  "author": "Dekel Braunstein",
+  "module": "dist/react-rbac-ui-manager.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/react-rbac-ui-manager.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/react-rbac-ui-manager.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "devDependencies": {
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.57",
+    "@size-limit/preset-small-lib": "^4.9.2",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^16.9.11",
+    "@types/styled-components": "^5.1.7",
+    "husky": "^5.1.3",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "size-limit": "^4.9.2",
+    "styled-components": "^5.2.1",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.1.0",
+    "typescript": "^4.2.2"
+  },
+  "externals": [
+    {
+      "react": "commonjs react",
+      "react-dom": "commonjs react-dom"
+    },
+    "/@material-ui/.*/"
+  ],
+  "release": {
+    "branches": [
+      "main"
+    ]
+  }
+}
