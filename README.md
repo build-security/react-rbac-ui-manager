@@ -4,7 +4,7 @@ react-rbac-ui-manager is a simple RBAC (Role Based Access Control) user interfac
 
 > This lib generates a simple json output of the roles and permissions and can be used internally with any `react` with `material-ui` based application.
 
-<img src="demo-animation.gif" alt="react rbac ui manager - live demo" />
+<img src="https://raw.githubusercontent.com/build-security/react-rbac-ui-manager/main/demo-animation.gif" alt="react rbac ui manager - live demo" />
 
 # Table of contents
 * [Install](#install)
