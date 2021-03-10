@@ -78,9 +78,9 @@ const Rbac = ({
     }, [permissionsTable]);
 
     const getAllNodesWithChildren = () => {
-        const f = (resource: any) => {
+        const recurse = (resource: any) => {
             let ret: any = [];
-            if (!('_resources' in resource)) {
+            if (!resource.hasOwnProperty('_resources')) {
                 return ret;
             }
 
@@ -88,13 +88,13 @@ const Rbac = ({
                 if (Object.keys(resource._resources[item]._resources).length > 0) {
                     ret.push(item);
                 }
-                ret = ret.concat(f(resource._resources[item]));
+                ret = [...ret, ...recurse(resource._resources[item])]
             });
 
             return ret;
         };
 
-        return f(permissionsTable);
+        return recurse(permissionsTable);
     };
 
     const handleCheckboxChanges = (newData: PermissionsObject) => {
