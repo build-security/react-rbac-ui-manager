@@ -80,5 +80,22 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/build-security/react-rbac-ui-manager.git"
+  },
+  "keywords": [
+    "rbac",
+    "react",
+    "authorization",
+    "material-ui",
+    "rbac-management",
+    "roles-management",
+    "roles-permissions-management"
+  ],
+  "bugs": {
+    "url": "https://github.com/build-security/react-rbac-ui-manager/issues"
+  },
+  "homepage": "https://github.com/build-security/react-rbac-ui-manager"
 }
