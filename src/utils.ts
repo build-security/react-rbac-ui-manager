@@ -1,17 +1,18 @@
 import { PermissionsObject, ResourcesItem } from './types';
 
 export const getAllResources = (data: PermissionsObject): string[] => {
-    const f = (resource: PermissionsObject | ResourcesItem) => {
+    const recurse = (resource: PermissionsObject | ResourcesItem) => {
         let ret: string[] = [];
-        if (!('_resources' in resource)) {
+
+        if (!resource.hasOwnProperty('_resources')) {
             return ret;
         }
         Object.keys(resource._resources).forEach((item) => {
             ret.push(item);
-            ret = ret.concat(f(resource._resources[item]));
+            ret = [ ...ret, ...recurse(resource._resources[item]) ]
         });
         return ret;
     };
 
-    return f(data);
+    return recurse(data);
 };

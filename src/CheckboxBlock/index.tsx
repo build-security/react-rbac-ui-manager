@@ -331,7 +331,7 @@ const StyledRow = styled(TableRow)`
 
     .MuiTableCell-root {
         line-height: 21px;
-        font-soze: 14px;
+        font-size: 14px;
         padding: 5px 15px;
         border-bottom: 0;
     }
